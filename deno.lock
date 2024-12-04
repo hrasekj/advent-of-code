@@ -7,6 +7,7 @@
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:ky@^1.7.2": "1.7.2",
     "npm:rambda@^9.4.0": "9.4.0"
   },
   "jsr": {
@@ -31,6 +32,9 @@
     }
   },
   "npm": {
+    "ky@1.7.2": {
+      "integrity": "sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg=="
+    },
     "rambda@9.4.0": {
       "integrity": "sha512-B7y7goUd+g0hNl5ODGUejNNERQL5gD8uANJ5Y5aHly8v0jKesFlwIe7prPfuJxttDpe3otQzHJ4NXMpTmL9ELA=="
     }
@@ -39,6 +43,7 @@
     "dependencies": [
       "jsr:@std/expect@^1.0.8",
       "jsr:@std/path@^1.0.8",
+      "npm:ky@^1.7.2",
       "npm:rambda@^9.4.0"
     ]
   }
