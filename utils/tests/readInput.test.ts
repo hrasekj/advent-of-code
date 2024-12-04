@@ -34,6 +34,7 @@ Deno.test("readInputFile removeLastEmptyLine", async (t) => {
   await t.step("removeLastEmptyLine = false", async () => {
     const input = await readInputFile(undefined, `tests/mock/input.txt`, {
       removeLastEmptyLine: false,
+      split: true,
     });
 
     expect(input.pop()).toEqual("");
@@ -42,6 +43,7 @@ Deno.test("readInputFile removeLastEmptyLine", async (t) => {
   await t.step("removeLastEmptyLine = true", async () => {
     const input = await readInputFile(undefined, `tests/mock/input.txt`, {
       removeLastEmptyLine: true,
+      split: true,
     });
 
     expect(input.pop()).toEqual("3   3");
@@ -53,5 +55,5 @@ Deno.test("readInputFile splitSeparator", async () => {
     split: false,
   });
 
-  expect(input).toEqual("a,b,c,d");
+  expect(input).toEqual("a,b,c,d\n");
 });
