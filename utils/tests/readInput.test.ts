@@ -29,3 +29,29 @@ Deno.test("readInputFile default baseDir", async () => {
 
   expect(input).toEqual(expectedResult);
 });
+
+Deno.test("readInputFile removeLastEmptyLine", async (t) => {
+  await t.step("removeLastEmptyLine = false", async () => {
+    const input = await readInputFile(undefined, `tests/mock/input.txt`, {
+      removeLastEmptyLine: false,
+    });
+
+    expect(input.pop()).toEqual("");
+  });
+
+  await t.step("removeLastEmptyLine = true", async () => {
+    const input = await readInputFile(undefined, `tests/mock/input.txt`, {
+      removeLastEmptyLine: true,
+    });
+
+    expect(input.pop()).toEqual("3   3");
+  });
+});
+
+Deno.test("readInputFile splitSeparator", async () => {
+  const input = await readInputFile(undefined, `tests/mock/split.txt`, {
+    split: false,
+  });
+
+  expect(input).toEqual("a,b,c,d");
+});
